@@ -4,7 +4,6 @@
 }
 
 table.dishesTable{
-
     width: 100%;
 }
 
@@ -24,9 +23,8 @@ table.dishesTable tbody td {
     background-color: #eee;
 }
 
-
-.selectedItem {
-    background: red;
+table.dishesTable tbody .selectedItem td {
+    background: lightblue;
 }
 
 .countInput {
