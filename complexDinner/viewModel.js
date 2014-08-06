@@ -1,18 +1,14 @@
-/**
- * Created by Student 1 on 8/5/2014.
- */
-
-var model = [new Dish('pizza', '5', 'images/VealChop.jpg'), new Dish('Veal chop', '10', 'images/VealChop.jpg')];
+var dishes = [new Dish('pizza', '5', 'img/VealChop.jpg'), new Dish('Veal chop', '10', 'img/VealChop.jpg')];
 
 var viewModel = {
     dishes: (function(){
         var extendedModel = [];
-        for(var i = 0; i < model.length; i++)
+        for (var i = 0; i < dishes.length; i++)
         {
             extendedModel.push({
-                dishName: model[i].dishName,
-                price: ko.observable(model[i].price),
-                photo: model[i].photo,
+                dishName: dishes[i].dishName,
+                price: ko.observable(dishes[i].price),
+                photo: dishes[i].photo,
                 isChecked: ko.observable(false),
                 count: ko.observable(1)
             });

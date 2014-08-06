@@ -24,7 +24,7 @@ viewModel.confirmation = ko.observable(function () {
         $('#basic-modal-content').modal({
             containerCss: {
                 height: 150,
-                width: 300
+                width: 250
             },
             onClose: function() {
                 UncheckAllDishes(viewModel);
@@ -56,6 +56,39 @@ ko.bindingHandlers.isSelected = {
             $(element).addClass('selectedItem');
         else {
             $(element).removeClass('selectedItem');
+        }
+    }
+};
+
+ko.bindingHandlers.isVisible = {
+    init: function (element, valueAccessor) {
+        var value = valueAccessor();
+
+        var valueUnwrapped = ko.unwrap(value);
+
+        if (valueUnwrapped == true)
+            $(element).css({
+                'visibility': 'visible'
+            });
+        else {
+            $(element).css({
+                'visibility': 'hidden'
+            });
+        }
+    },
+    update: function (element, valueAccessor) {
+        var value = valueAccessor();
+
+        var valueUnwrapped = ko.unwrap(value);
+
+        if (valueUnwrapped == true)
+            $(element).css({
+                'visibility': 'visible'
+            });
+        else {
+            $(element).css({
+                'visibility': 'hidden'
+            });
         }
     }
 };

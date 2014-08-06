@@ -1,0 +1,69 @@
+.content {
+    width: 1170px;
+    margin: 0 auto;
+}
+
+table.dishesTable{
+
+    width: 100%;
+}
+
+table.dishesTable td{
+    padding: 10px 30px;
+}
+
+table.dishesTable thead tr {
+    height: 80px;
+    background: lightgrey;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+table.dishesTable tbody td {
+    font-size: 18px;
+    background-color: #eee;
+}
+
+
+.selectedItem {
+    background: red;
+}
+
+.countInput {
+    max-width: 30px;
+}
+
+.photo {
+    width: 100px;
+}
+
+#simplemodal-container a.simplemodal-close.button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: 2px solid white;
+    border-radius: 25px;
+    background: rgb(253, 253, 253);
+    color: #3F6E8B;
+}
+
+.orderFormButton {
+    margin-top: 20px;
+    padding: 10px 40px;
+    border-radius: 25px;
+    background: rgb(253, 253, 253);
+}
+
+#simplemodal-container a.simplemodal-close.button:active {
+    border: 2px solid yellow;
+}
+
+.totalPrice {
+    margin-top: 20px;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.modelWindowContent {
+    
+}
