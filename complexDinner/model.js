@@ -1,4 +1,7 @@
-﻿viewModel.total = ko.computed(function () {
+﻿(function () {
+    'use strict';
+
+    viewModel.total = ko.computed(function () {
     var result = 0;
     var array = viewModel.dishes;
 
@@ -10,7 +13,7 @@
 }, viewModel);
 
 
-var UncheckAllDishes = function (viewModel) {
+var uncheckAllDishes = function (viewModel) {
     var array = viewModel.dishes;
 
     for (var i = 0; i < array.length; i++) {
@@ -27,7 +30,7 @@ viewModel.confirmation = ko.observable(function () {
                 width: 250
             },
             onClose: function() {
-                UncheckAllDishes(viewModel);
+                uncheckAllDishes(viewModel);
                 $.modal.close();
             }
         });
@@ -94,3 +97,4 @@ ko.bindingHandlers.isVisible = {
 };
 
 ko.applyBindings(viewModel);
+})();
