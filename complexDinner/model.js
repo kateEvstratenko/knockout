@@ -1,7 +1,7 @@
-﻿(function () {
-    'use strict';
+﻿var MODAL_WINDOW_WIDTH = 250;
+var MODAL_WINDOW_HEIGHT = 150;
 
-    viewModel.total = ko.computed(function () {
+viewModel.total = ko.computed(function () {
     var result = 0;
     var array = viewModel.dishes;
 
@@ -13,7 +13,7 @@
 }, viewModel);
 
 
-var uncheckAllDishes = function (viewModel) {
+var UncheckAllDishes = function (viewModel) {
     var array = viewModel.dishes;
 
     for (var i = 0; i < array.length; i++) {
@@ -26,11 +26,11 @@ viewModel.confirmation = ko.observable(function () {
     if (viewModel.total() > 0) {
         $('#basic-modal-content').modal({
             containerCss: {
-                height: 150,
-                width: 250
+                height: MODAL_WINDOW_HEIGHT,
+                width: MODAL_WINDOW_WIDTH
             },
             onClose: function() {
-                uncheckAllDishes(viewModel);
+                UncheckAllDishes(viewModel);
                 $.modal.close();
             }
         });
@@ -44,7 +44,7 @@ ko.bindingHandlers.isSelected = {
 
         var valueUnwrapped = ko.unwrap(value);
 
-        if (valueUnwrapped == true)
+        if (valueUnwrapped)
             $(element).addClass('selectedItem');
         else {
             $(element).removeClass('selectedItem');
@@ -55,7 +55,7 @@ ko.bindingHandlers.isSelected = {
 
         var valueUnwrapped = ko.unwrap(value);
 
-        if (valueUnwrapped == true)
+        if (valueUnwrapped)
             $(element).addClass('selectedItem');
         else {
             $(element).removeClass('selectedItem');
@@ -69,7 +69,7 @@ ko.bindingHandlers.isVisible = {
 
         var valueUnwrapped = ko.unwrap(value);
 
-        if (valueUnwrapped == true)
+        if (valueUnwrapped)
             $(element).css({
                 'visibility': 'visible'
             });
@@ -84,7 +84,7 @@ ko.bindingHandlers.isVisible = {
 
         var valueUnwrapped = ko.unwrap(value);
 
-        if (valueUnwrapped == true)
+        if (valueUnwrapped)
             $(element).css({
                 'visibility': 'visible'
             });
@@ -97,4 +97,3 @@ ko.bindingHandlers.isVisible = {
 };
 
 ko.applyBindings(viewModel);
-})();
